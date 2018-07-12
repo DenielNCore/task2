@@ -1,0 +1,63 @@
+main {
+  margin: auto;
+  width: 80%;
+  height: auto;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+main > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+@media (max-width: 900px) {
+  main > div {
+    flex-wrap: wrap;
+    min-width: 400px;
+    margin: 20px 40px;
+  }
+}
+@media (max-width: 750px) {
+  main > div {
+    margin: 20px -20px;
+  }
+}
+@media (max-width: 500px) {
+  main > div {
+    flex-wrap: wrap;
+    background: red;
+    min-width: 400px;
+    margin: 0;
+  }
+}
+main > div :first-child {
+  border: 5px solid red;
+}
+main > div div {
+  margin: 20px 0;
+  border: 5px solid #747474;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+main > div div:hover {
+  border: 5px solid yellow;
+  transition: 0.5s;
+}
+main > div div:hover > img {
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+main > div div img {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
