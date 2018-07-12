@@ -1,0 +1,30 @@
+{
+  "name": "task-2",
+  "version": "1.0.0",
+  "description": "task2",
+  "main": "index.js",
+  "dependencies": {
+    "less": "^3.7.1"
+  },
+  "devDependencies": {
+    "less-watch-compiler": "^1.11.3"
+  },
+  "scripts": {
+    "test": "test",
+    "less": "lessc less/main.less css/main.css",
+    "watch-less": "less-watch-compiler less css main.less"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenielNCore/task2.git"
+  },
+  "keywords": [
+    "task2"
+  ],
+  "author": "DenielNCore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenielNCore/task2/issues"
+  },
+  "homepage": "https://github.com/DenielNCore/task2#readme"
+}
