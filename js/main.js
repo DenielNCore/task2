@@ -1,3 +1,3 @@
-/**
- * Created by Deniel on 12.07.2018.
- */
+$(function () {
+    new Photoes(photoes, 'main');
+});

@@ -4,39 +4,30 @@ main {
   height: auto;
   min-height: 900px;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
-main > div {
+main .container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+@media (max-width: 1150px) {
+  main .container {
+    min-width: 900px;
+  }
 }
 @media (max-width: 900px) {
-  main > div {
-    flex-wrap: wrap;
+  main .container {
     min-width: 400px;
-    margin: 20px 40px;
   }
 }
-@media (max-width: 750px) {
-  main > div {
-    margin: 20px -20px;
-  }
-}
-@media (max-width: 500px) {
-  main > div {
-    flex-wrap: wrap;
-    background: red;
-    min-width: 400px;
-    margin: 0;
-  }
-}
-main > div :first-child {
+main .container :nth-child(4n-3).photo {
   border: 5px solid red;
 }
-main > div div {
+main .container .photo {
   margin: 20px 0;
   border: 5px solid #747474;
   width: 200px;
@@ -48,16 +39,64 @@ main > div div {
   align-items: center;
   transition: 0.5s;
 }
-main > div div:hover {
+main .container .photo .delList {
+  background: none;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  bottom: -90px;
+  left: 150px;
+  box-sizing: border-box;
+  opacity: 0.8;
+  z-index: 10;
+}
+main .container .photo .delList:hover {
+  opacity: 1;
+}
+main .container .photo .delList:before,
+main .container .photo .delList:after {
+  position: absolute;
+  content: ' ';
+  height: 25px;
+  width: 4px;
+  background-color: red;
+}
+main .container .photo .delList:before {
+  transform: rotate(45deg);
+}
+main .container .photo .delList:after {
+  transform: rotate(-45deg);
+}
+@media (max-width: 900px) {
+  main .container .photo {
+    margin: 20px 25px;
+  }
+}
+@media (max-width: 670px) {
+  main .container .photo {
+    margin: 20px -5px;
+  }
+}
+@media (max-width: 500px) {
+  main .container .photo {
+    margin: 20px 0px;
+  }
+}
+main .container .photo:hover {
   border: 5px solid yellow;
   transition: 0.5s;
 }
-main > div div:hover > img {
+main .container .photo:hover > img {
   transform: rotate(45deg);
   transition: 0.5s;
 }
-main > div div img {
+main .container .photo img {
   width: 300px;
   height: 200px;
   transition: 0.5s;
+  z-index: 5;
+}
+.refresher {
+  display: flex;
+  justify-content: center;
 }

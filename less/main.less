@@ -1,65 +1,98 @@
 main {
   margin: auto;
-  //background: red;
   width: 80%;
   height: auto;
   min-height: 900px;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-  flex-wrap: nowrap;
-
-  > div {
+  flex-wrap: wrap;
+  .container{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    flex-wrap: wrap;
+    max-width: 1000px;
+    @media (max-width: 1150px) {
+      min-width: 900px;
+    }
     @media (max-width: 900px) {
-      flex-wrap: wrap;
       min-width: 400px;
-      margin: 20px 40px;
+    }
+    :nth-child(4n-3){
+      &.photo{
+        border: 5px solid red;
+      }
+
+    }
+  .photo{
+    .delList {
+      background: none;
+      position: relative;
+      width: 25px;
+      height: 25px;
+      bottom: -90px;
+      left: 150px;
+      box-sizing: border-box;
+      opacity: 0.8;
+      z-index: 10;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .delList:before, .delList:after {
+      position: absolute;
+      content: ' ';
+      height: 25px;
+      width: 4px;
+      background-color: red;
+    }
+    .delList:before {
+      transform: rotate(45deg);
+    }
+    .delList:after {
+      transform: rotate(-45deg);
     }
 
-    @media (max-width: 750px) {
-      margin: 20px -20px;
+    margin: 20px 0;
+    border: 5px solid #747474;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    @media (max-width: 900px) {
+      margin: 20px 25px;
+    }
+    @media (max-width: 670px) {
+      margin: 20px -5px;
     }
     @media (max-width: 500px) {
-      flex-wrap: wrap;
-      background: red;
-      min-width: 400px;
-      margin: 0;
+      margin: 20px 0px;
     }
-    :first-child {
-      border: 5px solid red;
+    &:hover {
+      border: 5px solid yellow;
+      transition: 0.5s;
+      > img {
+        transform: rotate(45deg);
+        transition: 0.5s;
+      }
     }
-
-     div {
-       margin:  20px 0;
-       border: 5px solid #747474;
-       width: 200px;
-       height: 200px;
-       border-radius: 50%;
-       overflow: hidden;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       transition: 0.5s;
-       &:hover {
-         border: 5px solid yellow;
-         transition: 0.5s;
-           > img {
-            transform: rotate(45deg);
-            transition: 0.5s;
-          }
-
-       }
-       img {
-         width: 300px;
-         height: 200px;
-         transition: 0.5s;
-       }
-     }
+    img {
+      width: 300px;
+      height: 200px;
+      transition: 0.5s;
+      z-index: 5;
+    }
+  }
   }
 }
-@media (max-width: 900px) {
+.refresher {
+  display: flex;
+  justify-content: center;
+  button {
+
+  }
 }
